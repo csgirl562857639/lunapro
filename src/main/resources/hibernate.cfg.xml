@@ -1,0 +1,34 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@10.20.32.12:1521:uficc</property>
+		<property name="connection.username">weixin</property>
+		<property name="connection.password">Weixin_3212</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+		
+		<!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        
+         <!-- Drop and re-create the database schema on startup -->
+
+       <!-- update也可以用create/create-drop/update/validate代替, create 表示可以根据实体配置文件来自动生成表（只能生成表）.-->
+
+        <property name="hbm2ddl.auto">create</property>
+
+		<mapping resource="com/lumia/hibernate/entrty/OpenId.hbm.xml" />
+		<mapping class="com.lumia.hibernate.entrty.OpenIds" />
+
+	</session-factory>
+</hibernate-configuration>
