@@ -7,18 +7,40 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>lumia Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+	<properties>
+		<jfreechart.version>1.0.19</jfreechart.version>
+		<fastjson.version>1.1.42</fastjson.version>
+		<weixin-java-mp.version>${1.0.3}</weixin-java-mp.version>
+		<weixin-java-cp.version>${1.0.3}</weixin-java-cp.version>
+		<junit.version>4.11</junit.version>
+		<jsoup.version>1.8.1</jsoup.version>
+	</properties>
+
 	<dependencies>
+		<!-- wechat 订阅号，服务号 -->
+		<dependency>
+			<groupId>me.chanjar</groupId>
+			<artifactId>weixin-java-mp</artifactId>
+			<version>${weixin-java-mp.version}</version>
+		</dependency>
+		<!-- 企业号 -->
+		<dependency>
+			<groupId>me.chanjar</groupId>
+			<artifactId>weixin-java-cp</artifactId>
+			<version>${weixin-java-cp.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<!-- jsoup HTML parser library @ http://jsoup.org/ -->
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
-			<version>1.7.3</version>
+			<version>${jsoup.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -68,7 +90,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.1.41</version>
+			<version>${fastjson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -100,6 +122,11 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.6.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>${jfreechart.version}</version>
 		</dependency>
 	</dependencies>
 	<repositories>
